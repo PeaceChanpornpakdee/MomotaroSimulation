@@ -146,7 +146,7 @@ class Image:
     def __init__(self,x=0,y=0,name=''):
         self.x = x # Position X
         self.y = y # Position Y
-        self.img = pg.image.load('Desktop/MomotaroSimulation/Image/'+name+'.png')
+        self.img = pg.image.load('Image/'+name+'.png')
 
     def draw(self,screen):
         screen.blit(self.img, (self.x, self.y))
@@ -166,7 +166,7 @@ class GoalTop:
         self.r = 90
         self.rpm = 0
         self.angle = 0 #Degree
-        self.img   = pg.image.load('Desktop/MomotaroSimulation/Image/topSpin.png')  
+        self.img   = pg.image.load('Image/topSpin.png')  
         self.mode  = 1
 
     def rotate(self,angle,screen):
@@ -204,7 +204,7 @@ class GoalSide:
         self.r = 90
         self.rpm = 0
         self.angle = 0 #Degree
-        self.img = pg.image.load('Desktop/MomotaroSimulation/Image/sideSpin.png')
+        self.img = pg.image.load('Image/sideSpin.png')
         self.mode = 1
 
     def rotate(self,angle,screen):
@@ -262,7 +262,7 @@ class Text:
         self.y = y
         self.message  = message
         self.fontSize = fontSize 
-        self.font = pg.font.Font('Library/Fonts/Superspace Bold ver 1.00.ttf', self.fontSize)
+        self.font = pg.font.Font('Font/Superspace Bold ver 1.00.ttf', self.fontSize)
         self.fontColor = fontColor
         self.shadow = shadow
 
@@ -314,7 +314,7 @@ class InputBox:
         self.y = y
         self.message  = message
         self.fontSize = fontSize 
-        self.font = pg.font.Font('Library/Fonts/Superspace Bold ver 1.00.ttf', self.fontSize)
+        self.font = pg.font.Font('Font/Superspace Bold ver 1.00.ttf', self.fontSize)
         self.fontColor = (149,238,234)
         self.shadow = shadow
         self.text = self.font.render(self.message, True, self.fontColor, None)

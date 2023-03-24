@@ -1,5 +1,4 @@
 import sys
-import math
 import pygame as pg
 import pygame.gfxdraw as pgg
 from Setup import Color, Rectangle, Circle, RectButton, CircleButton, Trapezoid, Capsule, Image, GoalTop, GoalSide, Text, Timer, InputBox, Trajectory
@@ -11,7 +10,7 @@ class Simulation:
     def run(self):
         pg.init()
         win_x, win_y = 1200, 720
-        screen = pg.display.set_mode((win_x, win_y), pg.FULLSCREEN)
+        screen = pg.display.set_mode((win_x, win_y))
         clock  = pg.time.Clock()
 
         color       = Color()
@@ -250,7 +249,7 @@ class Simulation:
                         play = True
                         timerText.startTime()
                         
-                confirmImage.img = pg.image.load('Desktop/MomotaroSimulation/Image/true.png')
+                confirmImage.img = pg.image.load('Image/true.png')
                 confirmText.message = "Start"
 
             else: #(CANCEL)
@@ -265,7 +264,7 @@ class Simulation:
 
                 if(nowAction_1 == '' and lastAction_1 == "Press"):
                     if ready:
-                        pauseImage.img = pg.image.load('Desktop/MomotaroSimulation/Image/pause.png')
+                        pauseImage.img = pg.image.load('Image/pause.png')
                         timerText.endTime()
                         goalTop.rotate(-angle, screen) 
                         goalSide.rotate(-angle,screen)
@@ -273,7 +272,7 @@ class Simulation:
                         speed = 1.0
                         sim = False
                         play = False
-                confirmImage.img = pg.image.load('Desktop/MomotaroSimulation/Image/false.png')
+                confirmImage.img = pg.image.load('Image/false.png')
                 confirmText.message = "   Cancel!"
             
 
@@ -295,10 +294,10 @@ class Simulation:
             if(nowAction_2 == '' and lastAction_2 == "Press" and sim):
                 if(play == True):            
                     timerText.pauseTime()
-                    pauseImage.img = pg.image.load('Desktop/MomotaroSimulation/Image/play.png')
+                    pauseImage.img = pg.image.load('Image/play.png')
                 elif(play == False):
                     timerText.resumeTime()
-                    pauseImage.img = pg.image.load('Desktop/MomotaroSimulation/Image/pause.png')
+                    pauseImage.img = pg.image.load('Image/pause.png')
                 play = not play  
             
 
@@ -384,7 +383,7 @@ class Simulation:
                                 lock.y = lockText.y = 820
                             break               
                     if n == len(traject.table):
-                        pauseImage.img = pg.image.load('Desktop/MomotaroSimulation/Image/pause.png')
+                        pauseImage.img = pg.image.load('Image/pause.png')
                         timerText.endTime()
                         goalTop.rotate(-angle, screen) 
                         goalSide.rotate(-angle,screen)
@@ -444,7 +443,7 @@ class Simulation:
 
 
 
-            stripe1.img = stripe2.img = stripe3.img = stripe4.img = pg.image.load('Desktop/MomotaroSimulation/Image/'+stripeName+'.png')
+            stripe1.img = stripe2.img = stripe3.img = stripe4.img = pg.image.load('Image/'+stripeName+'.png')
 
 
 
